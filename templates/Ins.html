@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+ <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Inscription</title>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/normalize.min.css') }}">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style 2.css') }}">
+
+
+</head>
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
+
+      <h1>DicoSanté<span>.</span></h1>
+    </a>
+
+
+
+  </div>
+</header>
+
+<body>
+
+<div style="text-align:center;clear:both">
+<script src="static/js/statics.js" type="text/javascript"></script>
+</div>
+
+  <div class="form">
+    <div id="back" style="padding-bottom: 5%;">
+      <a href="/" tabindex="0"> &larr; Retour au site
+      </a>
+  </div>
+
+      <ul class="tab-group">
+        <li class="tab active"><a href="#login">Connexion</a></li>
+        <li class="tab"><a href="#signup">Inscription</a></li>
+
+      </ul>
+
+
+      <div class="tab-content">
+        <!--登录-->
+        <div id="login">
+          <h1 style="font-size: 24px;font-family: 'Trebuchet MS'">Content de vous (re)voir!</h1>
+
+          <form action="{{ url_for('ins') }}" method="post">
+
+            <div class="field-wrap">
+
+            <input name="email" type="email" required="" autocomplete="off" placeholder="Email*">
+          </div>
+
+          <div class="field-wrap">
+
+            <input name="password" type="password" required="" autocomplete="off" placeholder="Mot de Passe*">
+          </div>
+
+
+          <button class="button button-block" style="font-size: 20px">Me Connecter</button>
+
+          </form>
+
+        </div>
+
+        <!--注册-->
+        <div id="signup">
+          <h1 style="font-size: 24px;font-family: 'Trebuchet MS'">Créer mon compte DicoSanté</h1>
+
+          <form action="{{ url_for('register') }}" method="post">
+
+            <div class="top-row">
+              <div class="field-wrap">
+
+                <input name="first_name"  type="text" required="" autocomplete="off" placeholder="Prénom*">
+              </div>
+
+              <div class="field-wrap">
+
+                <input name="last_name" type="text" required="" autocomplete="off" placeholder="Nom*">
+              </div>
+            </div>
+
+            <div class="field-wrap">
+
+              <input name="email" type="email" required="" autocomplete="off" placeholder="Email*">
+            </div>
+
+            <div class="field-wrap">
+
+              <input name="password" type="password" required="" autocomplete="off" placeholder="Mot de Passe*">
+            </div>
+
+          <button type="submit" class="button button-block" style="font-size: 20px">Créer mon compte</button>
+          </form>
+
+        </div>
+
+
+
+      </div><!-- tab-content -->
+
+</div> <!-- /form -->
+
+
+<footer id="footer" class="footer1">
+
+  <div class="container1">
+    <div class="row1 gy-3">
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt icon"></i>
+        <div>
+          <h4>Addresse</h4>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022 - US<br>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links d-flex">
+        <i class="bi bi-telephone icon"></i>
+        <div>
+          <h4>Téléphone</h4>
+          <p>
+            <strong>Numéro:</strong> +1 5589 55488 55<br>
+
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links d-flex">
+        <i class="bi bi-question-circle icon"></i>
+        <div>
+          <h4>Adresse électronique</h4>
+          <p>
+            <strong>Email:</strong> info@example.com<br>
+
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Retrouvez Nous</h4>
+        <div class="social-links d-flex">
+          <a href="https://twitter.com/" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/feed/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      <i class="fa-brands fa-twitter"></i>
+    </div>
+  </div>
+
+  <div class="container1">
+    <div class="copyright">
+      Copyright © 2022</a>
+    </div>
+    <div class="credits">
+
+    </div>
+  </div>
+
+
+
+</footer>
+
+
+</body>
+</html>
+<script src='{{ url_for('static', filename='assets/js/jquery.min.js') }}'></script>
+<script src="{{ url_for('static', filename='assets/js/index.js') }}"></script>
+
+<style>
+h1{
+     font-family:"Inter", sans-serif;
+     font-size: 29px;
+     text-align: center;
+ }
+ span {
+ color:  #ce1212
+}
+
+ .footer1 {
+font-size: 14px;
+background-color: #1f1f24;
+padding: 50px 0;
+color: rgba(255, 255, 255, 0.7);
+}
+
+.footer1 .icon {
+margin-right: 15px;
+font-size: 24px;
+line-height: 2.4;
+}
+
+.footer1 h4 {
+font-size: 16px;
+font-weight: bold;
+position: relative;
+padding-bottom: 5px;
+color: #fff;
+}
+
+.footer1 .footer-links {
+margin-bottom: 30px;
+}
+
+.footer1 .footer-links ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.footer1 .footer-links ul li {
+padding: 10px 0;
+display: flex;
+align-items: center;
+}
+
+.footer1 .footer-links ul li:first-child {
+padding-top: 0;
+}
+
+.footer1 .footer-links ul a {
+color: rgba(255, 255, 255, 0.6);
+transition: 0.3s;
+display: inline-block;
+line-height: 1;
+}
+
+.footer1 .footer-links ul a:hover {
+color: #fff;
+}
+
+.footer1 .social-links a {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+border: 1px solid rgba(255, 255, 255, 0.2);
+font-size: 16px;
+color: rgba(255, 255, 255, 0.7);
+margin-right: 10px;
+transition: 0.3s;
+}
+
+.footer1 .social-links a:hover {
+color: #fff;
+border-color: #fff;
+}
+
+.footer1 .copyright {
+text-align: center;
+padding-top: 30px;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer1 .credits {
+padding-top: 4px;
+text-align: center;
+font-size: 13px;
+}
+
+.footer1 .credits a {
+color: #fff;
+}
+.container1{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 992px){
+.container1 {
+  max-width: 960px;
+}}
+@media (min-width: 768px){
+.container1 {
+  max-width: 720px;
+}}
+
+
+@media (min-width: 1200px){
+.container1{
+  max-width: 1140px;
+}}
+
+
+
+
+.gy-3 {
+  --bs-gutter-y: 1rem;
+}
+.row1 {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+.row1>* {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+.d-flex {
+  display: flex!important;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+@media (min-width: 992px){
+.col-lg-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}}
+@media (min-width: 768px){
+.col-md-6 {
+  flex: 0 0 auto;
+ 
+}}
+
+</style>
+
+
+<style>
+  .header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    height: 90px;
+    border-bottom: 1px solid #fff;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.header .logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+@media (min-width: 1200px){
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1140px;
+}}
+@media (min-width: 992px){
+.container, .container-lg, .container-md, .container-sm {
+    max-width: 960px;
+}}
+@media (min-width: 768px){
+.container, .container-md, .container-sm {
+    max-width: 720px;
+}}
+@media (min-width: 576px){
+.container, .container-sm {
+    max-width: 540px;
+}}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: 10%;
+}
+
+</style>
+

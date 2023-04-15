@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="Lå">
+
+<head>
+  <meta charset="utf-8">
+ <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Wishlist</title>
+  
+
+ 
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
+
+        <h1>DicoSanté<span>.</span></h1>
+      </a>
+
+
+
+    </div>
+  </header><!-- End Header -->
+
+
+    <!-- ======= Register Section ======= -->
+<div>
+    <div class="nava">
+        <img src="{{ url_for('static', filename='assets/img/L.jpg') }}" width="auto" height="auto" alt="" style="position: relative">
+        <p class="ome">Ma Collection</p>
+        <p class="Home"> <a href="/" style="color: black">Home</a><span style="color: green"> > </span> Wishlist</p>
+    </div>
+</div>
+
+
+
+<div class="wishlist-area section-space-y-axis-100" style="padding-top:12%">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form class="like" action="javascript:void(0)">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="product_remove">Retirer</th>
+                                    <th class="product-thumbnail">images</th>
+                                    <th class="cart-product-name" style="width:200px">Produit</th>
+                                    <th class="product-price">Prix</th>
+                                    <th class="product-stock-status" style="width:200px">Stock Status</th>
+
+                                </tr>
+                            </thead>
+                            <tbody style="vertical-align: middle;">
+                                {% for obj in objs %}
+                                <tr id="row">
+                                    <td class="product_remove" style="vertical-align: middle">
+                                        <a href="javascript:void(0)">
+                                            <i class="bi bi-x-lg icon" title="Remove" style="color:black" onclick="Hello('{{ url_for('add_collect', nid=obj.attr.id) }}?target={{ request.full_path }}')"></i>
+                                        </a>
+                                    </td>
+                                    <td class="product-thumbnail">
+                                        <a href="javascript:void(0)">
+                                            <img style="width: 100px" src="{{ url_for('static', filename='splider_file/PIC/') }}{{ obj.attr.pic }}" alt="Wishlist Thumbnail">
+                                        </a>
+                                    </td>
+                                    <td class="product-name"><a href="javascript:void(0)">{{ obj.attr.name }}</a></td>
+                                    <td class="product-price"><span class="amount">${{ obj.attr.price }}</span></td>
+                                    <td class="product-stock-status" style="vertical-align: middle;"><span class="in-stock">
+                                        in stock
+                                    </span></td>
+
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ======= Footer ======= -->
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h4>Addresse</h4>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022 - US<br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+            <i class="bi bi-telephone icon"></i>
+            <div>
+              <h4>Téléphone</h4>
+              <p>
+                <strong>Numéro:</strong> +1 5589 55488 55<br>
+
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links d-flex">
+            <i class="bi bi-question-circle icon"></i>
+            <div>
+              <h4>Adresse électronique</h4>
+              <p>
+                <strong>Email:</strong> info@example.com<br>
+
+              </p>
+            </div>
+          </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Retrouvez Nous</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        Copyright © 2022</a>
+      </div>
+      <div class="credits">
+
+      </div>
+    </div>
+
+
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+
+
+        <!-- Template Main JS File -->
+        <script src='assets/js/jquery.min.js'></script>
+        <script src="{{ url_for('static', filename='assets/js/index.js') }}"></script>
+        <script src="static/js/statics.js" type="text/javascript"></script>
+        
+
+
+
+
+           
+
+
+</body>
+
+</html>
+
+
+
+<!--CSS-->
+<style>
+    div.nava{
+        position: relative;
+    }
+    p.ome{
+        font-size: 29px;
+        font-family:"Playfair Display", serif;
+        font-weight: bold;
+        color:black;
+        position:absolute;
+        top:170px;
+        left:10px;
+        right: 10px;
+        margin: auto;
+        text-align: center;
+    }
+    p.Home{
+        font-size: 15px;
+        font-family:  "Poppins", sans-serif;
+        color:black;
+        position:absolute;
+        top:210px;
+        left:10px;
+        right: 10px;
+        margin: auto;
+        text-align: center;
+    }
+    .section-space-y-axis-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 15px);
+    padding-left: var(--bs-gutter-x, 15px);
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+@media (max-width: 640px){
+form.like {
+    transition: all 0.5s;
+    top: 50%;
+    /* transform: translateY(-50%); */
+}
+}
+
+/*
+.col-12 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+form.like {
+    display: block;
+    margin-top: 0em;
+}
+.table-content table {
+    border-color: #dee2e6;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    text-align: center;
+    width: auto;
+    margin-bottom: 0;
+}
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-striped-color: #3e3e3f;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #3e3e3f;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #3e3e3f;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #3e3e3f;
+    vertical-align: top;
+    border-color: #dee2e6;
+}
+
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+
+thead, tbody, tfoot, tr, td, th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+.table-content table th, .table-content table td {
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+}
+.table-content table th {
+    border-top: medium none;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 20px 10px;
+    text-align: center;
+    font-weight: 500;
+    vertical-align: middle;
+}
+.table-content .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: #dee2e6;
+}
+.table-content table td.product_remove {
+    font-size: 20px;
+}
+@media (min-width: 576px){
+.container, .container-sm {
+    max-width: 540px;
+}}
+@media (max-width: 767.98px){
+.table-content table thead tr {
+    display: none;
+    
+}}
+.table>tbody {
+    vertical-align: inherit;
+}
+.table-content .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: #dee2e6;
+}
+@media (max-width: 767.98px){
+.table-content table td {
+    width: 100%;
+    display: block;
+}}
+@media (max-width: 767.98px){
+.table-content table td:nth-child(3) {
+    padding: 32.1px 10px;
+    display: block;
+    width: 100%;
+}}
+*/
+
+
+</style>
+<script>
+    function Hello(src) {
+        location.href = src;
+    } 
+    </script>
+
+
+
